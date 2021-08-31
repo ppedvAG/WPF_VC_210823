@@ -1,0 +1,47 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <sys:Double x:Key="Ddl_FontSize">14</sys:Double>
+
+    <Style x:Key="Sty_Wnd" TargetType="Window">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Offset="0" Color="LightYellow" />
+                    <GradientStop Offset="1" Color="Orange" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Sty_Base" TargetType="Control">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0,5,0" />
+    </Style>
+
+    <Style BasedOn="{StaticResource Sty_Base}" TargetType="TextBox" />
+
+    <Style BasedOn="{StaticResource Sty_Base}" TargetType="DatePicker" />
+
+    <Style BasedOn="{StaticResource Sty_Base}" TargetType="CheckBox" />
+
+    <Style BasedOn="{StaticResource Sty_Base}" TargetType="ComboBox" />
+
+    <Style TargetType="RadioButton">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="Width" Value="110" />
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="FontSize" Value="{StaticResource Ddl_FontSize}" />
+    </Style>
+
+</ResourceDictionary>

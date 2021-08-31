@@ -1,0 +1,48 @@
+﻿<Window
+    x:Class="M04_EventRouting.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:M04_EventRouting"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="Wnd_Main"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    ButtonBase.Click="Wnd_Main_Click"
+    TextBoxBase.TextChanged="Wnd_Main_TextChanged"
+    mc:Ignorable="d">
+    <StackPanel
+        x:Name="A"
+        Background="Aqua"
+        MouseDown="MouseDownHandler"
+        PreviewMouseDown="PreviewMouseDownHandler">
+        <StackPanel
+            x:Name="B"
+            Background="Beige"
+            MouseDown="MouseDownHandler"
+            PreviewMouseDown="PreviewMouseDownHandler">
+            <StackPanel
+                x:Name="C"
+                Background="Chocolate"
+                MouseDown="MouseDownHandler"
+                PreviewMouseDown="PreviewMouseDownHandler">
+                <StackPanel
+                    x:Name="D"
+                    Background="DarkKhaki"
+                    MouseDown="MouseDownHandler"
+                    PreviewMouseDown="PreviewMouseDownHandler" />
+            </StackPanel>
+        </StackPanel>
+
+
+        <Button Content="ButtonBase-Test" />
+        <Button Click="Button_Click" Content="Button-Test" />
+        <TextBox />
+
+        <TextBlock
+            x:Name="Tbl_Output"
+            Height="200"
+            Background="White" />
+    </StackPanel>
+</Window>

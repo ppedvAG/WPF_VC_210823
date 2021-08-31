@@ -1,0 +1,39 @@
+﻿<Window
+    x:Class="M14_View.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:M14_View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:M14_ViewModel;assembly=M14_ViewModel"
+    Title="MVVM Demo"
+    Width="260"
+    Height="280"
+    mc:Ignorable="d">
+
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+
+    <DockPanel>
+        <Button
+            Command="{Binding GetPeopleCommand}"
+            Content="Lade Personen"
+            DockPanel.Dock="Top" />
+
+        <!--<ListBox DisplayMemberPath="Vorname" ItemsSource="{Binding PersonenListe}" />-->
+
+        <ListBox ItemsSource="{Binding PersonenListe}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Vorname}" />
+                        <TextBlock Text="{Binding Nachname}" />
+                        <TextBlock Text="{Binding Alter}" />
+                        <TextBlock Text="{Binding Kontostand}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</Window>

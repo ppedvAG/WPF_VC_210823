@@ -1,0 +1,66 @@
+﻿<Window
+    x:Class="M16_Animations.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:M16_Animations"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Storyboard x:Key="TestAnimation">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="65.583" />
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="65.583" />
+                <EasingDoubleKeyFrame KeyTime="00:00:01.8000000" Value="334.978" />
+                <EasingDoubleKeyFrame KeyTime="00:00:03.1000000" Value="517.601" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="31.278" />
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="31.278" />
+                <EasingDoubleKeyFrame KeyTime="00:00:01.8000000" Value="118.049" />
+                <EasingDoubleKeyFrame KeyTime="00:00:03.1000000" Value="235.089" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="46.315" />
+                <EasingDoubleKeyFrame KeyTime="00:00:01.8000000" Value="22.151" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Canvas x:Name="Cvs_Main" Background="BurlyWood">
+        <Rectangle
+            x:Name="rectangle"
+            Width="151"
+            Height="84"
+            Margin="46,46,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.5,0.5"
+            Stroke="Black">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button
+            Width="46"
+            Height="23"
+            Margin="14,17,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Button">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="PreviewMouseDown">
+                    <BeginStoryboard Storyboard="{StaticResource TestAnimation}" />
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+    </Canvas>
+</Window>

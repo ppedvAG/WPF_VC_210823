@@ -1,0 +1,55 @@
+﻿<Window
+    x:Class="M06_DataBinding.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:M06_DataBinding"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <StackPanel>
+        <StackPanel x:Name="Spl_DataContextBsp">
+            <!--
+                Der DataContext repräsentiert das Datenobjekt, auf welches sich der
+                entsprechende Bereich fokussiert (hier das StackPanel). Innerhalb dieses
+                Bereichs kann per Kurzbindung auf dieses Objekt zugrgriffen werden
+            -->
+            <StackPanel.DataContext>
+                <local:Person
+                    Alter="29"
+                    Nachname="Meier"
+                    Vorname="Anna" />
+            </StackPanel.DataContext>
+
+            <TextBox Text="{Binding Vorname}" />
+            <TextBlock Text="{Binding Nachname}" />
+            <TextBlock Text="{Binding Alter}" />
+
+            <Button
+                x:Name="Btn_Show"
+                Click="Btn_Show_Click"
+                Content="Show" />
+            <Button
+                x:Name="Btn_Altern"
+                Click="Btn_Altern_Click"
+                Content="Altern" />
+
+        </StackPanel>
+
+        <ListBox
+            x:Name="Lbl_Personen"
+            Height="100"
+            ItemsSource="{Binding PersonenListe}" />
+
+        <Button
+            x:Name="Btn_Neu"
+            Click="Btn_Neu_Click"
+            Content="Neu" />
+        <Button
+            x:Name="Btn_Löschen"
+            Click="Btn_Löschen_Click"
+            Content="Löschen" />
+    </StackPanel>
+</Window>

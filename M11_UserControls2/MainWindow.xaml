@@ -1,0 +1,53 @@
+﻿<Window
+    x:Class="M11_UserControls2.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:M11_UserControls2"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="450"
+    Height="670"
+    mc:Ignorable="d">
+    <StackPanel>
+        <local:LabledTextBoxUserControl
+            Width="270"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            LabelText="Vorname:"
+            TextBoxText="Mary" />
+
+        <local:LabledTextBoxUserControl
+            Width="286"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            LabelText="Nachname:"
+            TextBoxText="Christmas" />
+
+        <local:LabledTextBoxUserControl
+            Width="286"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            LabelText="Alter:"
+            TextBoxText="10" />
+
+        <local:LabledTextBoxUserControl
+            Width="286"
+            Height="26"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            LabelText="Slider:"
+            TextBoxText="{Binding ElementName=sliderWert, Path=Value}" />
+
+        <Slider
+            x:Name="sliderWert"
+            Width="286"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+
+
+    </StackPanel>
+</Window>

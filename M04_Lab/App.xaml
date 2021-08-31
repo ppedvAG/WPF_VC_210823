@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="M04_Lab.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:M04_Lab"
+    StartupUri="PersonenDialog.xaml">
+    <Application.Resources />
+</Application>
